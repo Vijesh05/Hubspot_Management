@@ -1,0 +1,12 @@
+
+h2,h1 {
+
+    text-align: center;
+    
+    }
+
+th,td,tbody {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+      } 

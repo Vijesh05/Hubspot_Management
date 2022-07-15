@@ -1,0 +1,74 @@
+<div>
+  <h1 style="background-color:hwb(235 5% 25% / 0.302);">
+    Hubspot-Contact Management</h1>
+    <table style="width:100%"> 
+      <tr>
+  <div>
+    <div style="background-color:whitesmoke;font-size:20px;display:inline;">
+       <input type="button" value="connect with hubspot" (click)="connectHubspot()"> </div>   
+    <div style="color:rgb(29, 222, 22);font-size:20px;display:inline;padding-left: 25%;" *ngIf="connected">
+      Connected with Hubspot Successfully </div> 
+    <div style="background-color:pink;display:inline;float:right" *ngIf="connected">
+     <input type="button" value="Disconnect" (click)="Disconnect()">
+    </div>
+    </div>
+     <div>
+      <table style="
+      width: 100%;" *ngIf="connected">
+        <tbody>
+        <tr>
+          <th>Name</th>
+          <th>Email</th> 
+          <th>Actions</th>
+        </tr>
+        <tr *ngFor="let obj of datas">
+          <td>{{obj.name}}</td>
+          <td>{{obj.email}}</td>
+          <td> <a type="button" [href]="obj.id" target="_blank">Edit</a> &NonBreakingSpace;
+            <input type="button" value= "Delete" (click)="delContact(obj.delId)"> </td>
+        </tr>
+        </tbody>
+      </table>
+     </div>
+     <div>
+     <div style="background-color:whitesmoke;font-size:30px;display:inline;" *ngIf="connected">
+      <input type="button" value="Create" (click)="Create()"></div>
+    </div>
+     <div style="background: #349193b3;
+     width: 40%;
+     height: 38%;
+     position: absolute;
+     top: 50%;
+     left: 35%;
+     margin: -30px 0 0 -30px;" *ngIf="connected && showCreate">
+     <h2>Contact Details</h2>
+     <div>
+      <div>
+      <label> &NonBreakingSpace;&NonBreakingSpace;Contact First Name: </label>
+      <input [(ngModel)]="firstName">
+    </div>
+    <div>
+      <br><label>&NonBreakingSpace;&NonBreakingSpace;Contact Last Name: </label>
+      <input [(ngModel)]="lastName">
+    </div>
+    <div>
+      <br><label>&NonBreakingSpace; &NonBreakingSpace;Contact Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input [(ngModel)]="email" type="email">
+    </div>
+    <div>
+      <br><label>&NonBreakingSpace; &NonBreakingSpace;Contact Phone: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+      <input [(ngModel)]="phone" type="number" >
+    </div>
+    <div>
+      <div style="background-color:transparent;display:inline;float:right;padding-right: 20px;">
+        <input type="button" value="Save" (click)="Save()">
+       </div>
+      </div>
+    </div>
+   
+      
+    
+    
+
+
+
